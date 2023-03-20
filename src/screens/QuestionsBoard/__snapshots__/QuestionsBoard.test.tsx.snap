@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test QuestionsBoard Screen 1`] = `
+<RCTScrollView>
+  <View>
+    <View>
+      <Text
+        accessibilityLabel="usernameText"
+      >
+        Alaa Naeeim
+      </Text>
+      <TextInput
+        accessibilityLabel="username"
+        onChangeText={[Function]}
+        placeholder="Enter USername"
+        value="Alaa Naeeim"
+      />
+      <Image
+        source={
+          Object {
+            "testUri": "../../../src/assets/images/iphone.jpg",
+          }
+        }
+        style={
+          Object {
+            "height": 100,
+            "resizeMode": "contain",
+            "width": 100,
+          }
+        }
+      />
+      <View
+        accessibilityLabel="change username"
+        accessibilityRole="button"
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {},
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#007AFF",
+                  "fontSize": 18,
+                  "margin": 8,
+                  "textAlign": "center",
+                },
+              ]
+            }
+          >
+            Change Username
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
