@@ -1,11 +1,11 @@
 import {View, StyleSheet} from 'react-native';
 import React from 'react';
-import QuestionsBoard from './src/screens/QuestionsBoard/QuestionsBoard';
+import AnimationScreen from './src/screens/AnimationScreen/AnimationScreen';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <QuestionsBoard />
+      <AnimationScreen />
     </View>
   );
 }
