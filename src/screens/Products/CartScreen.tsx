@@ -68,12 +68,25 @@ const CartScreen = ({navigation}: any) => {
           <View style={styles.listCards}>
             <FlatList
               data={DATA}
-              renderItem={({item}) => <CardDetails item={item} />}
+              renderItem={({item, index}) => (
+                <CardDetails key={index} item={item} />
+              )}
               keyExtractor={item => item.id}
               showsVerticalScrollIndicator={false}
             />
           </View>
           <View style={styles.details}>
+            {DATA.map((item: any) => (
+              <View style={styles.dev}>
+                <Text style={[styles.titlePrice, {color: 'black'}]}>
+                  {item?.product?.name}
+                </Text>
+                <Text style={[styles.titlePrice, {color: 'black'}]}>
+                  {item?.quantity} * {item?.product?.price} $
+                </Text>
+              </View>
+            ))}
+            <View style={styles.line} />
             <View style={styles.dev}>
               <Text style={[styles.titlePrice, {color: 'black'}]}>
                 Total Price
@@ -109,6 +122,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginVertical: 5,
   },
   titlePrice: {
     fontSize: 18,
@@ -223,5 +237,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#000000',
     fontWeight: '600',
+  },
+  line: {
+    height: 2,
+    backgroundColor: 'grey',
+    marginTop: 10,
   },
 });
