@@ -1,18 +1,19 @@
 import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
-import React, {useState} from 'react';
+import React from 'react';
 import RootStackApp from './src/navigations/RootStackApp';
 import {NavigationContainer} from '@react-navigation/native';
-import MyDrawer from './src/navigations/Drawer';
+import {QueryClient, QueryClientProvider} from 'react-query';
 
 export default function App() {
-  const [authenticated, setAuthenticated] = useState(true);
-
+  const client = new QueryClient();
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={'dark-content'} />
-      <NavigationContainer>
-        {authenticated ? <MyDrawer /> : <RootStackApp />}
-      </NavigationContainer>
+      <QueryClientProvider client={client}>
+        <NavigationContainer>
+          <RootStackApp />
+        </NavigationContainer>
+      </QueryClientProvider>
     </SafeAreaView>
   );
 }
