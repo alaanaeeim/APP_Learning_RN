@@ -5,11 +5,17 @@ import {NavigationContainer} from '@react-navigation/native';
 import {QueryClient, QueryClientProvider} from 'react-query';
 
 export default function App() {
-  const client = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false,
+      },
+    },
+  });
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle={'dark-content'} />
-      <QueryClientProvider client={client}>
+      <QueryClientProvider client={queryClient}>
         <NavigationContainer>
           <RootStackApp />
         </NavigationContainer>
